@@ -1,0 +1,70 @@
+/* Write your CSS code here */
+.website-img-logo {
+  height: 30px;
+}
+.login-logo {
+  height: 420px;
+  width: 450px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+@media screen and(min-width:250px and max-width:450px) {
+  .login-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+  }
+}
+.login-form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 16px 0px #bfbf;
+  height: 350px;
+  width: 350px;
+  padding: 10px;
+  padding-top: 20px;
+  margin-right: 10%;
+  border-radius: 10px;
+}
+.btn {
+  height: 40px;
+  width: 240px;
+  background-color: #0967d2;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: 'roboto';
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-label {
+  font-size: 20px;
+  font-family: 'roboto';
+  align-self: flex-start;
+}
+.input-field {
+  height: 40px;
+  width: 240px;
+  border-radius: 10px;
+  background-color: #e6f6ff;
+  border: none;
+}

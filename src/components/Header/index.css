@@ -1,0 +1,39 @@
+/* Write your CSS code here */
+
+.nav-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.websiteLogo {
+  height: 30px;
+  width: 10%;
+}
+.nav-menu {
+  list-style: none;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20%;
+}
+.nav-link {
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 20px;
+  font-family: 'roboto';
+  color: #64748b;
+}
+.logout-btn {
+  height: 40px;
+  width: 80px;
+  background-color: #0967d2;
+  padding: 10px;
+  outline: none;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+}
