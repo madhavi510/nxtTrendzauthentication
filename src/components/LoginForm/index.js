@@ -1,4 +1,5 @@
 // Write your JS code here
+
 import {Component} from 'react'
 import './index.css'
 
@@ -6,6 +7,7 @@ class LoginForm extends Component {
   state = {
     username: '',
     password: '',
+    errorMsg: '',
   }
 
   usernameInputValue = e => {
@@ -16,13 +18,9 @@ class LoginForm extends Component {
     this.setState({password: e.target.value})
   }
 
-  onSubmitSuccess = () => {
+  onLoginSuccess = () => {
     const {history} = this.props
-    history.push('/')
-  }
-
-  onSubmitFailure = () => {
-    ;<p>*username and password did not match</p>
+    history.replace('/')
   }
 
   onSubmitForm = async e => {
@@ -38,15 +36,14 @@ class LoginForm extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
     if (response.ok === true) {
-      this.onSubmitSuccess()
-    }
-    if (response.ok === false) {
-      this.onSubmitFailure()
+      this.onLoginSuccess()
+    } else {
+      this.setState({errorMsg: data.error_msg})
     }
   }
 
   render() {
-    const {username, password} = this.state
+    const {username, password, errorMsg} = this.state
     return (
       <div className="login-form-container">
         <img
@@ -69,6 +66,7 @@ class LoginForm extends Component {
               id="username"
               className="input-field"
               value={username}
+              placeholder="Username"
               onChange={this.usernameInputValue}
             />
           </div>
@@ -82,12 +80,14 @@ class LoginForm extends Component {
               id="password"
               className="input-field"
               value={password}
+              placeholder="Password"
               onChange={this.passwordInputValue}
             />
           </div>
           <button type="submit" className="btn">
             LogIn
           </button>
+          <p className="error-msg">*{errorMsg}</p>
         </form>
       </div>
     )
